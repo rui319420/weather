@@ -9,10 +9,44 @@
   background-color: #6c6c6c;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .title {
   margin-bottom: 2rem;
   font-size: 3rem;
-  color: #333;
+  color: #fff;
+}
+
+.searchForm {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.searchInput {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.searchButton {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  background-color: #1e90ff;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.searchButton:hover {
+  background-color: #0073e6;
 }
 
 .weatherCard {
@@ -57,4 +91,9 @@
 
 .details > p {
   margin: 0.5rem 0;
+}
+
+.error {
+  font-size: 1.2rem;
+  color: #ff4d4d;
 }
