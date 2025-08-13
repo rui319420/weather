@@ -111,6 +111,17 @@ export default function Home() {
     }
   };
 
+  // 主要都市のリスト
+  const majorCities = ['東京', '大阪', '札幌', '名古屋', '福岡', '横浜', '京都', '神戸', '那覇'];
+
+  const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedCity = e.target.value;
+    setCity(selectedCity);
+    if (selectedCity) {
+      void fetchWeatherByCity(selectedCity);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -127,6 +138,14 @@ export default function Home() {
           <button type="submit" className={styles.searchButton}>
             検索
           </button>
+          <select onChange={handleCityChange} className={styles.searchInput}>
+            <option value="">エリアを選択</option>
+            {majorCities.map((city) => (
+              <option key={city} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
         </form>
 
         {loading && <div>読み込み中...</div>}
